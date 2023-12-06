@@ -1,0 +1,16 @@
+class Solution {
+public:
+    string largestGoodInteger(string num) {
+        vector<string> dup;
+        string ans="";
+        for (int i=0;i<num.size();i++){
+            if(i + 2 < num.size() && num[i]==num[i+1] && num[i+1]==num[i+2]) dup.push_back(string(1, num[i]));
+        }
+        sort(dup.begin(), dup.end());
+        if(!dup.empty()){
+            int x=3;
+        while(x--) ans+=dup[dup.size()-1];
+        }
+        return ans;
+    }
+};
