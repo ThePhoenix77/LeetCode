@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+        int res = 0;
+        int fullWeeks = n / 7;
+        int remainingDays = n % 7;
+        for (int i = 0; i < fullWeeks; i++) {
+            res += 28 + i * 7;
+        }
+        for (int i = 0; i < remainingDays; i++) {
+            res += i + fullWeeks + 1;
+        }
+        return res;
+    }
+};
