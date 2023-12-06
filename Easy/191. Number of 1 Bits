@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int hammingWeight(uint32_t n) {
+        int res=0;
+        string s = bitset<32>(n).to_string();
+        for (char c : s) {
+            if (c=='1') {
+                res++;
+            }
+        }
+        return res;
+    }
+};
