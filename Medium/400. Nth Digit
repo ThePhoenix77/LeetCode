@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int findNthDigit(int n) {
+        long long base = 9, digits = 1;
+        while (n - base * digits > 0) {
+            n -= base * digits;
+            base *= 10;
+            digits++;
+        }
+        int num = pow(10, digits - 1) + (n - 1) / digits;
+        int digitIdx = (n - 1) % digits;
+        string numStr = to_string(num);
+        return numStr[digitIdx] - '0';
+    }
+};
