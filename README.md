@@ -20,7 +20,7 @@ The repository is organized as follows:
 
 - Each LeetCode problem has its own directory.
 - Inside each directory, you can find the problem statement, solution file, and any additional resources.
-- The solutions are implemented in C++, and the file naming convention is `[problem-name].[file-extension]`.
+- The solutions are implemented in C++, and the file naming convention is `[problem-number-in-leetcode].[problem-name]`.
 
 ## Usage
 
