@@ -12,7 +12,7 @@ This repository contains my solutions to various LeetCode problems. Each problem
 
 ## Introduction
 
-LeetCode is a platform for practicing coding problems, preparing for technical interviews, and enhancing algorithmic skills. This repository serves as a record of my solutions to LeetCode problems, implemented in [programming language].
+LeetCode is a platform for practicing coding problems, preparing for technical interviews, and enhancing algorithmic skills. This repository serves as a record of my solutions to LeetCode problems, implemented in C++.
 
 ## Organization
 
