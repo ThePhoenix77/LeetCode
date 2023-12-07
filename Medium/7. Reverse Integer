@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int reverse(int x) {
+        long R = 0;
+        while (x != 0) {
+            R = 10 * R + x % 10;
+            x /= 10;
+        }
+        return (R > INT_MAX || R < INT_MIN) ? 0 : R;
+    }
+};
