@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int myAtoi(string s) {
+        long result = 0;
+        int sign = 1;
+        int i = 0;
+    while (i<s.size() && s[i] == ' ') i++;
+    if (i<s.size() && (s[i] == '+' || s[i] == '-')) {
+        sign = (s[i++] == '-') ? -1 : 1;
+    }
+    while (i<s.size() && isdigit(s[i])) {
+        result = result * 10 + (s[i++] - '0');
+        if (result * sign>numeric_limits<int>::max()) {
+            return numeric_limits<int>::max();
+        }else if(result*sign<numeric_limits<int>::min()) return numeric_limits<int>::min();
+    }
+    return static_cast<int>(result * sign);
+    }
+};
