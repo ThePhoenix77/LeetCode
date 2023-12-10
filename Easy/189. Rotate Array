@@ -1,0 +1,13 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k % n; 
+        // Create a temporary vector to store the rotated elements
+        vector<int> tmp(nums.begin()+n-k, nums.end());
+        // Erase the rotated elements from the original vector
+        nums.erase(nums.begin()+n-k, nums.end());
+        // Insert the rotated elements at the beginning of the original vector
+        nums.insert(nums.begin(), tmp.begin(), tmp.end());
+    }
+};
