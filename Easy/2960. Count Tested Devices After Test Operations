@@ -1,0 +1,8 @@
+class Solution {
+public:
+    int countTestedDevices(vector<int>& batteryPercentages) {
+        int ans = 0;
+        for(auto b: batteryPercentages) ans += (b > ans)?1: 0;
+        return ans;
+    }
+};
