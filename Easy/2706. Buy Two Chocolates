@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int buyChoco(vector<int>& prices, int money) {
+        sort(prices.begin(), prices.end());
+        int priceOfThe2Chocolates=prices[0]+prices[1];
+        int leftOver=money-priceOfThe2Chocolates;
+        if (leftOver<0) leftOver=money;
+        return leftOver;
+
+    }
+};
