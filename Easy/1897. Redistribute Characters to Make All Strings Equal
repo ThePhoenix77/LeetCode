@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool makeEqual(vector<string>& words) {
+        int n=words.size();
+        int ans=true;
+        unordered_map<char, int> pairingCounts;
+        for (auto a  : words) {
+            for (char x : a) {
+                pairingCounts[x]++;
+            }
+        }
+        for (auto a : pairingCounts) {
+            if (a.second % n != 0) {
+                ans=false;
+            }
+        }
+        return ans;
+    }
+};
