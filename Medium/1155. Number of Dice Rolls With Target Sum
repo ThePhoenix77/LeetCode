@@ -1,0 +1,29 @@
+const int MOD = 1e9 + 7;
+const int N = 31;
+const int M = 1001;
+
+class Solution {
+public:
+    int answers[N][N][M];
+
+    int helper(int dice, int k, int target) {
+        if (target > k * dice) return 0;
+        if (dice == 1) {
+            return target <= k;
+        }
+        if (answers[dice][k][target] > -1) return answers[dice][k][target];
+        long long int ans = 0;
+        for (int i = 0; i <= k  &&  i <= target; i++) {
+            ans += helper(dice - 1, k, target - i);
+            ans %= MOD;
+        }
+
+        return answers[dice][k][target] = (ans % MOD);
+    }
+
+    int numRollsToTarget(int n, int k, int target) {
+        if (n > target) return 0;
+        memset(answers, -1, sizeof(answers));
+        return helper(n, k - 1, target - n);
+    }
+};
