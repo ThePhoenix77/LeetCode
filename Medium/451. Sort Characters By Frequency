@@ -1,0 +1,12 @@
+class Solution {
+public:
+    string frequencySort(string s) {
+        unordered_map<char, int> freqMap;
+        for (char c : s) freqMap[c]++;
+        auto customSort = [&](char a, char b) {
+            return freqMap[a] > freqMap[b] || (freqMap[a] == freqMap[b] && a < b);
+        };
+        sort(s.begin(), s.end(), customSort);
+        return s;
+    }
+};
