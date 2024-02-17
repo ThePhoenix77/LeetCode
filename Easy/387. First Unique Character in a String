@@ -1,0 +1,26 @@
+class Solution {
+public:
+    /*void removeCharAtIndex(string& str, int index) {
+        if (index >= 0 && index < str.length()) str.erase(index, 1);
+    }*/
+    int firstUniqChar(string s) {
+        /*int res=-1;
+        if(s.size()==1) return 0;
+        for(int i=0;i<s.size()-1;i++){
+            string rest=s;
+            removeCharAtIndex(rest, i);
+            if (rest.find(s[i]) == string::npos) {res=i;break;}
+        }
+        return res;*/
+        unordered_map<char, int> charCount;
+        for (char c : s) {
+            charCount[c]++;
+        }
+        for (int i = 0; i < s.size(); i++) {
+            if (charCount[s[i]] == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+};
