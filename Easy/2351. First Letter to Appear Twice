@@ -1,0 +1,30 @@
+class Solution {
+public:
+    char repeatedCharacter(string s) {
+        int charCount[26] = {0};
+        char ans;
+        for (char c : s) {
+            int index = c - 'a';
+            if (charCount[index] == 1) {ans=c;break;}
+            charCount[index]++;
+        }
+        return ans;
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Solution {
+public:
+    char repeatedCharacter(string s) {
+        unordered_set<char> seen;
+        char ans = '\0';
+        for (char ch : s) {
+            if (!seen.insert(ch).second) {
+                ans = ch;
+                break;
+            }
+        }
+        return ans;
+    }
+};
