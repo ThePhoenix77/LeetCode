@@ -1,0 +1,16 @@
+class Solution {
+public:
+    vector<int> shortestToChar(string s, char c) {
+        int index=s.find(c);;
+        vector<int> res;
+        for(int i=0;i<s.size();i++){
+            if(s[i]==c) index=i;
+            res.push_back(abs(i-index));
+        }
+        for(int i=s.size()-1;i>=0;i--){
+            if(s[i]==c) index=i;
+            res[i]=min(res[i], abs(i-index));
+        }
+        return res;
+    }
+};
