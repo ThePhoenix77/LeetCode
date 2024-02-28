@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int index_big(vector<int> v){
+        int index=0;
+        int tmp=v[0];
+        for(int i=0;i<v.size();i++){
+            if(v[i]>tmp){
+                tmp=v[i];
+                index=i;
+            }
+        }
+        return index;
+    }
+    int dominantIndex(vector<int>& nums) {
+        int maxIndex=index_big(nums);
+        for(int i=0;i<nums.size();i++) {
+            if(i!=maxIndex && nums[maxIndex]<2*nums[i]) return -1;
+        }
+        return maxIndex;
+    }
+};
