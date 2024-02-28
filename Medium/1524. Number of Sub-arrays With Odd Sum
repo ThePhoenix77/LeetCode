@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int numOfSubarrays(vector<int>& arr) {
+        int n=arr.size();
+        int odd_sum_count=0;
+        int even_sum_count=1;
+        int sum=0;
+        int res=0;
+        long long limit=1000000007;
+        
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            if(sum%2==0){
+                res=(res+odd_sum_count) % limit;
+                even_sum_count++;
+            }
+            else {
+                res=(res+even_sum_count) % limit;
+                odd_sum_count++;
+            }
+        }
+        return res;
+    }
+};
