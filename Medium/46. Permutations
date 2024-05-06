@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<vector<int>> res;
+    void generate_all_possible_permutations(vector<int> nums, int start){
+        if(start==nums.size()-1){
+            res.push_back(nums);
+            return ;
+        }
+        for(int i=start;i<nums.size();++i){
+            swap(nums[start], nums[i]);
+            generate_all_possible_permutations(nums, start+1);
+            swap(nums[start], nums[i]);
+        }
+    }
+    vector<vector<int>> permute(vector<int>& nums) {
+        generate_all_possible_permutations(nums, 0);
+        return res;
+    }
+};
