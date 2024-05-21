@@ -1,0 +1,19 @@
+class Solution {
+public:
+    void backtrack(const vector<int>& nums, vector<vector<int>>& result, vector<int>& current, int start) {
+        result.push_back(current);
+        for (int i = start; i < nums.size(); ++i) {
+            current.push_back(nums[i]);
+            backtrack(nums, result, current, i + 1);
+            current.pop_back();
+    }
+}
+    vector<vector<int>> subsets(vector<int>& nums) {
+        int n=nums.size();
+        //int total_subs=1 << n;
+        vector<vector<int>> res;
+        vector<int> sub;
+        backtrack(nums, res, sub, 0);
+        return res;
+    }
+};
