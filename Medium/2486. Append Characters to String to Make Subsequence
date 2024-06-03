@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int appendCharacters(string s, string t) {
+        int i=0, j=0;
+        int ss=s.size();
+        int st=t.size();
+        while(i<ss && j<st){
+            if(s[i]==t[j]) j++;
+            i++;
+        }
+        return st-j;
+    }
+};
