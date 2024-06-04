@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int longestPalindrome(string s) {
+        int ans=0;
+        unordered_set<char> uos;
+        for(char c:s){
+            if(uos.find(c)!=uos.end()){
+                uos.erase(c);
+                ans+=2;
+            }else uos.insert(c);
+        }
+        if(!uos.empty()) ans++;
+        return ans;
+    }
+};
