@@ -11,14 +11,13 @@ public:
 
 ////////////////////////////////////////////////////////////////////
 
-**Other Approach:**
-*Using the XOR operator.*
-*/int singleNumber(vector<int>& nums) {
+/*Other Approach:*/
+/*Using the XOR operator.*/
+/*
+    int singleNumber(vector<int>& nums) {
         int result = 0;
-
-    for (int num : nums) {
-        result ^= num;
-    }
-
-    return result;
-    }/*
+        for (int num : nums) {
+            result ^= num;
+        }
+        return result;
+}*/
