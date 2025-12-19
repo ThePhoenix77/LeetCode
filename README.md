@@ -1,6 +1,8 @@
 # LeetCode Solutions
 
-This repository contains my solutions to various LeetCode problems. Each problem is organized into its own directory, and the solutions are implemented in C++.
+This repository contains my solutions to various LeetCode problems. Each problem is organized into its own directory, and most of the solutions are implemented in C++.
+
+Check out my LeetCode profile: [ThePhoenix77](https://leetcode.com/u/ThePhoenix77/)
 
 ## Table of Contents
 
